@@ -1,43 +1,56 @@
-import { showToast, Toast, getSelectedFinderItems, closeMainWindow } from "@raycast/api";
-import { exec } from "child_process";
-import { checkTextDifferInstallation } from "./utils/checkInstall";
+import { Action, ActionPanel, Detail, getSelectedFinderItems } from "@raycast/api";
+import { diffLines } from "diff";
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { useEffect, useState } from "react";
 
-export default async function main() {
-  const application = await checkTextDifferInstallation();
-  if (!application) {
-    return;
-  }
+function fenced(value: string): string {
+  return value.replace(/```/g, "` ` `");
+}
 
-  try {
-    const filePaths = (await getSelectedFinderItems()).map((f) => f.path);
-    if (filePaths.length >= 2) {
-      const file1 = filePaths[0];
-      const file2 = filePaths[1];
+export default function Command() {
+  const [markdown, setMarkdown] = useState("Loading selected files…");
+  const [plainDiff, setPlainDiff] = useState("");
 
-      console.log(file1);
-      await showToast({
-        style: Toast.Style.Success,
-        title: "Opening in Text Differ",
-        message: `Comparing ${file1} and ${file2}`,
-      });
+  useEffect(() => {
+    void (async () => {
+      try {
+        const selected = await getSelectedFinderItems();
+        if (selected.length !== 2) {
+          setMarkdown("# Select exactly two files\n\nChoose two text files in Finder or File Explorer, then run this command again.");
+          return;
+        }
 
-      const textDifferPath = application.path;
-      const command = `"${textDifferPath}/Contents/MacOS/Text Differ" "${file1}" "${file2}"`;
+        const [left, right] = selected;
+        const [leftText, rightText] = await Promise.all([
+          fs.readFile(left.path, "utf8"),
+          fs.readFile(right.path, "utf8"),
+        ]);
+        const changes = diffLines(leftText, rightText);
+        const rendered = changes
+          .map((change) => `${change.added ? "+" : change.removed ? "-" : " "}${change.value}`)
+          .join("");
+        setPlainDiff(rendered);
+        setMarkdown(
+          `# ${path.basename(left.path)} ↔ ${path.basename(right.path)}\n\n` +
+            `\`\`\`diff\n${fenced(rendered)}\n\`\`\``,
+        );
+      } catch (error) {
+        setMarkdown(`# Could not compare files\n\n${error instanceof Error ? error.message : String(error)}`);
+      }
+    })();
+  }, []);
 
-      exec(command);
-      closeMainWindow({ clearRootSearch: true });
-    } else {
-      await showToast({
-        style: Toast.Style.Failure,
-        title: "Please select at least two files",
-        message: "Please select at least two files",
-      });
-    }
-  } catch (e) {
-    await showToast({
-      style: Toast.Style.Failure,
-      title: "No finder items selected",
-      message: e instanceof Error ? e.message : "Could not get the selected Finder items",
-    });
-  }
+  return (
+    <Detail
+      markdown={markdown}
+      actions={
+        plainDiff ? (
+          <ActionPanel>
+            <Action.CopyToClipboard title="Copy Diff" content={plainDiff} />
+          </ActionPanel>
+        ) : undefined
+      }
+    />
+  );
 }

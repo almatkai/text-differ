@@ -2,8 +2,8 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "text-differ",
   "title": "Text Differ",
-  "description": "Opens Text Differ from selected files",
-  "icon": "command-icon.png",
+  "description": "Compare two selected text files directly in Tezbar",
+  "icon": "assets/command-icon.png",
   "author": "almatkai",
   "categories": [
     "Applications",
@@ -13,9 +13,9 @@
   "commands": [
     {
       "name": "open-with-text-differ",
-      "title": "Open With Text Differ",
-      "description": "When two files are selected in finder the command will open them in Text Differ",
-      "mode": "no-view",
+      "title": "Compare Selected Files",
+      "description": "Show a line-by-line diff for two files selected in Finder or File Explorer",
+      "mode": "view",
       "platforms": [
         "macOS",
         "Windows"
@@ -24,7 +24,8 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.104.1",
-    "@raycast/utils": "^2.2.2"
+    "@raycast/utils": "^2.2.2",
+    "diff": "^8.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
