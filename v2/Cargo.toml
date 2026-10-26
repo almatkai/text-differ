@@ -1,0 +1,19 @@
+[package]
+name = "text-differ-v2"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT AND BSD-3-Clause"
+description = "Standalone native Text Differ for Tezbar"
+
+[dependencies]
+tezbar-extension-sdk = { git = "https://github.com/almatkai/tezbar-extension-sdk-rust.git", rev = "e955911f0bf5b558f9d3eb5183df0adc95c22af2", version = "=0.1.1" }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[[bin]]
+name = "text-differ"
+path = "src/main.rs"

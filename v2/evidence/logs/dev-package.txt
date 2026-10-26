@@ -1,0 +1,11 @@
+{
+  "developmentOnly": true,
+  "installableRelease": false,
+  "target": "aarch64-apple-darwin",
+  "archive": "dist/text-differ-dev-aarch64-apple-darwin.zip",
+  "archiveSha256": "30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd",
+  "executableSha256": "c910e8d0a741c96875ab906e483f41ef6be49c97de59be3b6945105bfe609436",
+  "memberCount": 100,
+  "inventoryComplete": true,
+  "extractedExecutable": ".qa/extracted/30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd/bin/text-differ"
+}

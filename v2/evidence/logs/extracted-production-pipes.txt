@@ -1,0 +1,9 @@
+{
+  "oracleComparisons": 1361,
+  "productionPipes": true,
+  "canceledOpens": 140,
+  "copyAckNegatives": 9,
+  "readRecovery": true,
+  "profileIsolation": true,
+  "executable": "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/extracted/30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd/bin/text-differ"
+}

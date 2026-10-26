@@ -1,0 +1,2 @@
+    Checking text-differ-v2 v0.1.0 (/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s

@@ -1,0 +1,37 @@
+{
+  "host": "ea100cee3f69711de12485ba061950c5fc65258f",
+  "path": "dist-backend/extension-worker.js",
+  "sourceSha256": "aa020985cfbf22ff06559a540ee9c4cca2bc9627ae8a786cca8f274fc74a9514",
+  "functions": [
+    {
+      "function": "normalizeActionTitle",
+      "firstLine": 5955,
+      "lastLine": 5977
+    },
+    {
+      "function": "stableActionId",
+      "firstLine": 5978,
+      "lastLine": 5981
+    },
+    {
+      "function": "parseShortcut",
+      "firstLine": 5982,
+      "lastLine": 5989
+    },
+    {
+      "function": "pushEffect",
+      "firstLine": 5996,
+      "lastLine": 6001
+    },
+    {
+      "function": "copyToSystemClipboard",
+      "firstLine": 6102,
+      "lastLine": 6109
+    },
+    {
+      "function": "registerAction",
+      "firstLine": 7510,
+      "lastLine": 7567
+    }
+  ]
+}

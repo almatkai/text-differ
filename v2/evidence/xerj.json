@@ -1,0 +1,21 @@
+{
+  "canonicalRoot": "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ",
+  "prefix": "ax-eca10337d9d5",
+  "stateDir": ".git/xerj-state",
+  "initial": {
+    "exitCode": 3,
+    "reason": "completed-with-junk",
+    "generation": 1,
+    "codeFilesIndexed": 5,
+    "codeFiles": 5,
+    "nonCodeCoverage": "incomplete; asset junk skip"
+  },
+  "final": {
+    "exitCode": 1,
+    "completeCoverage": false,
+    "outputTail": "autoindex: 2 scan threads, 2 index workers, 4 pdf workers, --bulk-mb 8 [cores=15 ram_total_mib=24576 ram_available_mib=unknown safe_zone_mib=12288]\nautoindex: bulk HTTP request timeout: 300s\nxerj-bar [????????????????????????] pct unknown | walk | eta unknown\nxerj-progress phase=walk basis=none pct=unknown items=0/0 bytes=0/0 rate=unknown eta_s=unknown eta_quality=unknown since_progress_s=0.0 phase_elapsed_s=0.0 elapsed_s=0.0\nautoindex: 163 files (1 MB) under /Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ\nautoindex: ignore rules: skipped 19 files and pruned 7 directories (contents never walked, so not counted); 3 ignore files read\nautoindex: ignore rules:   .gitignore:*.log \u2014 15 files\nautoindex: ignore rules:   hidden:dotfile \u2014 4 files, 2 directories pruned\nautoindex: ignore rules:   v2/.gitignore:/target-*/ \u2014 3 directories pruned\nautoindex: ignore rules:   v2/.gitignore:/dist/ \u2014 1 directory pruned\nautoindex: ignore rules:   v2/.gitignore:/target/ \u2014 1 directory pruned\nxerj-progress phase=hash basis=bytes pct=0.0 items=0/163 bytes=0/1567829 rate=unknown eta_s=unknown eta_quality=unknown since_progress_s=0.0 phase_elapsed_s=0.0 elapsed_s=0.0\nxerj-progress phase=scan basis=bytes pct=0.0 items=0/101 bytes=0/1090907 rate=unknown eta_s=unknown eta_quality=unknown since_progress_s=0.0 phase_elapsed_s=0.0 elapsed_s=0.0\nxerj-done ok=false exit=1 reason=aborted wall=0.3s\nerror: project new file v2/Cargo.toml: no frozen dataset accepts family docs, group None, and fields [\"end_line\", \"start_line\", \"text\"]; this requires unsupported dataset/schema evolution (use a new prefix)\n",
+    "searchExitCode": 0,
+    "searchOutput": "no match in ax-eca10337d9d5-* for: diff_lines SessionGuard clipboard_ack\n(index a relevant repo first: xerj autoindex <folder>)\n"
+  },
+  "fallback": "Exact full-source, rg and Git checks are authoritative; no alternate namespace, restart or schema mutation."
+}

@@ -1,0 +1,11 @@
+
+running 5 tests
+test pinned_runtime::development_source_is_not_a_release_artifact ... ok
+test before::active_resource_and_canonical_preferences ... ok
+test after::active_resource_and_canonical_preferences ... ok
+test after::exact_verified_covered_aliases_only ... ok
+test original_gate::catalog_cannot_route_this_new_alias ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+Exact host function fixtures: alias/resource before+after; preference/uninstall roots unchanged. No host build.

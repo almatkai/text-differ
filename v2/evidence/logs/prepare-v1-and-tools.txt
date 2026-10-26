@@ -1,0 +1,18 @@
+
+added 95 packages in 436ms
+
+added 55 packages in 507ms
+✔ package.json declares Windows+macOS and Tezbar metadata (0.898709ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 52.771208
+npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+npm notice run text-differ@0.1.0 test
+npm notice run node --import tsx --test test/*.test.ts
+npm notice run text-differ@0.1.0 typecheck
+npm notice run tsc --noEmit

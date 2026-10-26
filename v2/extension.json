@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 3,
+  "id": "com.tezbar.native.text-differ",
+  "slug": "text-differ",
+  "name": "Text Differ",
+  "version": "0.1.0",
+  "description": "Compare two selected text files directly in Tezbar",
+  "icon": "resources/command-icon.png",
+  "runtime": "rust",
+  "execution": "process",
+  "protocolVersion": 1,
+  "repository": "https://github.com/almatkai/text-differ",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "commands": [
+    {
+      "name": "open-with-text-differ",
+      "title": "Compare Selected Files",
+      "runtime": "rust",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "timeoutMs": 30000,
+      "concurrency": "serialize",
+      "refreshMs": null
+    }
+  ],
+  "preferences": [],
+  "replaces": [
+    "com.tezbar.text-differ",
+    "raycast.text-differ"
+  ],
+  "capabilities": [
+    "selection.read",
+    "clipboard.write"
+  ],
+  "artifacts": {},
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Live desktop selection and clipboard not run; synthetic process validation only."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Windows linked executable and live platform tests not run."
+    }
+  ]
+}

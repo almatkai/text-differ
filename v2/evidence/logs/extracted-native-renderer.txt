@@ -1,0 +1,11 @@
+{
+  "pinnedRendererExecuted": true,
+  "detailMouseEventBefore": "object",
+  "detailMouseEventAfter": "text-differ:fixture",
+  "hostilePreTextExact": true,
+  "activeContentNodes": 0,
+  "osEffects": 0,
+  "actualSchema": true,
+  "schemaNegatives": 7,
+  "nativeMarkup": true
+}

@@ -1,0 +1,29 @@
+Text Differ Rust V2 — development review, not an installed or published release.
+
+Source: almatkai/text-differ, 12e6a2f422647b98274e3bfd63c814ed073820f2.
+Original README credits Noah Tran. Original source, root LICENSE and icon are
+retained. Root LICENSE is copied verbatim, including its literal backslash-n
+sequences; no substitute copyright or grant has been invented.
+
+Default diffLines algorithm translated from jsdiff 8.0.4, Copyright (c) 2009-2015
+Kevin Decker <kpdecker@gmail.com>, BSD-3-Clause. Authentic license in
+licenses/diff-BSD-3-Clause.txt. Modifications: Rust ownership, bounded work and
+read sizes, cooperative cancellation checkpoints, explicitly rejected ASCII
+controls, and an inert native display. Component grouping and tie order retained.
+
+Original icon SHA256:
+539f182de0e5c528161361fb6f949fda52800f025a947cd3421512064aafddd5
+Exact own source bytes match raycast/extensions at
+6734d85992290066fd31a7f5bee3cca3d3545a1a, extensions/text-differ/assets/command-icon.png.
+Raycast MIT text is in licenses/raycast-MIT.txt.
+
+tezbar-extension-sdk 0.1.1 at e955911f0bf5b558f9d3eb5183df0adc95c22af2
+is Apache-2.0. Authentic LICENSE and NOTICE are in licenses/SDK-*.
+Locked Rust dependency notices are in licenses/rust/ and rust-locked.json.
+The locked r-efi 6.0.0 crate omits full license texts; its supplied README/AUTHORS
+are retained as evidence, with missingText:true. Its UEFI dependency branch is
+not compiled for the declared macOS/Windows targets. This is not a new grant.
+
+Pinned host source fixtures are from Tezbar ea100cee3f69711de12485ba061950c5fc65258f,
+Apache-2.0; exact LICENSE in licenses/host-Apache-2.0.txt. Fixtures and JS tools
+are validation-only and are not included as executable product runtime.

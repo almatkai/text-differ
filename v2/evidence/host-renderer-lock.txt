@@ -1,0 +1,3 @@
+Host ea100 pnpm-lock.yaml SHA256 f98edb2075fda3dd40b530bb41a7c007aa06e24748a5603fabe26b468d390d8e
+Pinned direct renderer/tool dependencies: dompurify 3.4.0; highlight.js 11.11.1; jsdom 26.1.0; marked 18.0.2; marked-highlight 2.2.4; react/react-dom 18.3.1.
+QA uses a separate exact npm lock for those versions.
