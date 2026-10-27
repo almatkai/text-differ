@@ -1,0 +1,535 @@
+[
+  {
+    "input": [
+      "",
+      ""
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n\n```",
+      "copy": null,
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": []
+    },
+    "native": {
+      "actions": [],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQ==",
+      "YQ=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n a\n```",
+      "copy": " a",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": false,
+          "value": "a"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:0",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n a</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "",
+      "YQpiCg=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n+a\nb\n\n```",
+      "copy": "+a\nb\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 2,
+          "added": true,
+          "removed": false,
+          "value": "a\nb\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:3",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n+a\nb\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQpiCg==",
+      ""
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-a\nb\n\n```",
+      "copy": "-a\nb\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 2,
+          "added": false,
+          "removed": true,
+          "value": "a\nb\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:6",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-a\nb\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQpiCg==",
+      "YwpkCg=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-a\nb\n+c\nd\n\n```",
+      "copy": "-a\nb\n+c\nd\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 2,
+          "added": false,
+          "removed": true,
+          "value": "a\nb\n"
+        },
+        {
+          "count": 2,
+          "added": true,
+          "removed": false,
+          "value": "c\nd\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:9",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-a\nb\n+c\nd\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQ0KYg0K",
+      "YQpiCg=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-a\r\nb\r\n+a\nb\n\n```",
+      "copy": "-a\r\nb\r\n+a\nb\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 2,
+          "added": false,
+          "removed": true,
+          "value": "a\r\nb\r\n"
+        },
+        {
+          "count": 2,
+          "added": true,
+          "removed": false,
+          "value": "a\nb\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:12",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<p>Display escapes backslashes as \\\\ and carriage returns as \\r. Copy Diff preserves the original text.</p>\n<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-a\\r\nb\\r\n+a\nb\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQ0=",
+      "YQo="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-a\r+a\n\n```",
+      "copy": "-a\r+a\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": true,
+          "value": "a\r"
+        },
+        {
+          "count": 1,
+          "added": true,
+          "removed": false,
+          "value": "a\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:15",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<p>Display escapes backslashes as \\\\ and carriage returns as \\r. Copy Diff preserves the original text.</p>\n<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-a\\r+a\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQo=",
+      "YQ=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-a\n+a\n```",
+      "copy": "-a\n+a",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": true,
+          "value": "a\n"
+        },
+        {
+          "count": 1,
+          "added": true,
+          "removed": false,
+          "value": "a"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:18",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-a\n+a</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "YQoK",
+      "YQo="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n a\n-\n\n```",
+      "copy": " a\n-\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": false,
+          "value": "a\n"
+        },
+        {
+          "count": 1,
+          "added": false,
+          "removed": true,
+          "value": "\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:21",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n a\n-\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "77u/YQo=",
+      "YQo="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-﻿a\n+a\n\n```",
+      "copy": "-﻿a\n+a\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": true,
+          "value": "﻿a\n"
+        },
+        {
+          "count": 1,
+          "added": true,
+          "removed": false,
+          "value": "a\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:24",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-﻿a\n+a\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "8J+Yugrwn5Go4oCN8J+RqeKAjfCfkacK",
+      "8J+Yugrwn5iDCg=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n 😺\n-👨‍👩‍👧\n+😃\n\n```",
+      "copy": " 😺\n-👨‍👩‍👧\n+😃\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 1,
+          "added": false,
+          "removed": false,
+          "value": "😺\n"
+        },
+        {
+          "count": 1,
+          "added": false,
+          "removed": true,
+          "value": "👨‍👩‍👧\n"
+        },
+        {
+          "count": 1,
+          "added": true,
+          "removed": false,
+          "value": "😃\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:27",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n 😺\n-👨‍👩‍👧\n+😃\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  },
+  {
+    "input": [
+      "W3hdKGh0dHBzOi8vYmFkKQo8aW1nIHNyYz14PgpgYGAK",
+      "PHNjcmlwdD5iYWQ8L3NjcmlwdD4Kfn5+Cg=="
+    ],
+    "source": {
+      "markdown": "# left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt\n\n```diff\n-[x](https://bad)\n<img src=x>\n` ` `\n+<script>bad</script>\n~~~\n\n```",
+      "copy": "-[x](https://bad)\n<img src=x>\n```\n+<script>bad</script>\n~~~\n",
+      "reads": [
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/left ``` <img src=x> [x](file:) &.txt",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/fixtures/right 😺.txt"
+      ],
+      "changes": [
+        {
+          "count": 3,
+          "added": false,
+          "removed": true,
+          "value": "[x](https://bad)\n<img src=x>\n```\n"
+        },
+        {
+          "count": 2,
+          "added": true,
+          "removed": false,
+          "value": "<script>bad</script>\n~~~\n"
+        }
+      ]
+    },
+    "native": {
+      "actions": [
+        {
+          "id": "text-differ:30",
+          "kind": "action",
+          "title": "Copy Diff"
+        }
+      ],
+      "mode": "view",
+      "ok": true,
+      "refreshMs": null,
+      "root": {
+        "props": {
+          "markdown": "<pre>left ``` &lt;img src=x&gt; [x](file:) &amp;.txt ↔ right 😺.txt\n\n-[x](https://bad)\n&lt;img src=x&gt;\n```\n+&lt;script&gt;bad&lt;/script&gt;\n~~~\n</pre>"
+        },
+        "type": "Detail"
+      },
+      "title": "left ``` <img src=x> [x](file:) &.txt ↔ right 😺.txt"
+    }
+  }
+]

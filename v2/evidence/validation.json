@@ -1,0 +1,477 @@
+{
+  "source": "12e6a2f422647b98274e3bfd63c814ed073820f2",
+  "host": "ea100cee3f69711de12485ba061950c5fc65258f",
+  "sdk": "e955911f0bf5b558f9d3eb5183df0adc95c22af2",
+  "rustStable": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "rustMSRV": "rustc 1.85.0 (4d91de4e4 2025-02-17)",
+  "node": "v26.7.0",
+  "checks": [
+    {
+      "name": "prepare-v1-and-tools",
+      "command": [
+        "python3",
+        "v2/scripts/prepare.py"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 2.017,
+      "log": ".qa/validation/prepare-v1-and-tools.log"
+    },
+    {
+      "name": "fmt-stable",
+      "command": [
+        "cargo",
+        "+stable",
+        "fmt",
+        "--manifest-path",
+        "v2/Cargo.toml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.047,
+      "log": ".qa/validation/fmt-stable.log"
+    },
+    {
+      "name": "test-stable",
+      "command": [
+        "cargo",
+        "+stable",
+        "test",
+        "--locked",
+        "--all-targets",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 1.661,
+      "log": ".qa/validation/test-stable.log"
+    },
+    {
+      "name": "clippy-stable",
+      "command": [
+        "cargo",
+        "+stable",
+        "clippy",
+        "--locked",
+        "--all-targets",
+        "--manifest-path",
+        "v2/Cargo.toml",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.205,
+      "log": ".qa/validation/clippy-stable.log"
+    },
+    {
+      "name": "build-stable",
+      "command": [
+        "cargo",
+        "+stable",
+        "build",
+        "--locked",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.087,
+      "log": ".qa/validation/build-stable.log"
+    },
+    {
+      "name": "pipes-stable",
+      "command": [
+        "node",
+        "v2/tests/process.mjs",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/target/debug/text-differ"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 1.9,
+      "log": ".qa/validation/pipes-stable.log"
+    },
+    {
+      "name": "fmt-1.85.0",
+      "command": [
+        "cargo",
+        "+1.85.0",
+        "fmt",
+        "--manifest-path",
+        "v2/Cargo.toml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.05,
+      "log": ".qa/validation/fmt-1.85.0.log"
+    },
+    {
+      "name": "test-1.85.0",
+      "command": [
+        "cargo",
+        "+1.85.0",
+        "test",
+        "--locked",
+        "--all-targets",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 1.638,
+      "log": ".qa/validation/test-1.85.0.log"
+    },
+    {
+      "name": "clippy-1.85.0",
+      "command": [
+        "cargo",
+        "+1.85.0",
+        "clippy",
+        "--locked",
+        "--all-targets",
+        "--manifest-path",
+        "v2/Cargo.toml",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.172,
+      "log": ".qa/validation/clippy-1.85.0.log"
+    },
+    {
+      "name": "build-1.85.0",
+      "command": [
+        "cargo",
+        "+1.85.0",
+        "build",
+        "--locked",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.072,
+      "log": ".qa/validation/build-1.85.0.log"
+    },
+    {
+      "name": "pipes-1.85.0",
+      "command": [
+        "node",
+        "v2/tests/process.mjs",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/target-msrv/debug/text-differ"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 1.89,
+      "log": ".qa/validation/pipes-1.85.0.log"
+    },
+    {
+      "name": "pinned-host-functions",
+      "command": [
+        "python3",
+        "v2/tests/host_contract.py"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.503,
+      "log": ".qa/validation/pinned-host-functions.log"
+    },
+    {
+      "name": "pinned-renderer-schema",
+      "command": [
+        "node",
+        "v2/tests/renderer.mjs"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.383,
+      "log": ".qa/validation/pinned-renderer-schema.log"
+    },
+    {
+      "name": "windows-gnu-check",
+      "command": [
+        "cargo",
+        "+stable",
+        "check",
+        "--locked",
+        "--all-targets",
+        "--target",
+        "x86_64-pc-windows-gnu",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.149,
+      "log": ".qa/validation/windows-gnu-check.log"
+    },
+    {
+      "name": "windows-gnu-link",
+      "command": [
+        "cargo",
+        "+stable",
+        "build",
+        "--locked",
+        "--target",
+        "x86_64-pc-windows-gnu",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 101,
+      "state": "blocked",
+      "seconds": 0.6,
+      "log": ".qa/validation/windows-gnu-link.log",
+      "reason": "error calling dlltool"
+    },
+    {
+      "name": "windows-msvc-check",
+      "command": [
+        "cargo",
+        "+stable",
+        "check",
+        "--locked",
+        "--all-targets",
+        "--target",
+        "x86_64-pc-windows-msvc",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 101,
+      "state": "blocked",
+      "seconds": 0.215,
+      "log": ".qa/validation/windows-msvc-check.log",
+      "reason": "target may not be installed"
+    },
+    {
+      "name": "isolated-https-release",
+      "command": [
+        "cargo",
+        "+stable",
+        "build",
+        "--locked",
+        "--release",
+        "--target",
+        "aarch64-apple-darwin",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 9.832,
+      "log": ".qa/validation/isolated-https-release.log"
+    },
+    {
+      "name": "locked-crate-fetch",
+      "command": [
+        "cargo",
+        "+stable",
+        "fetch",
+        "--locked",
+        "--manifest-path",
+        "v2/Cargo.toml"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.031,
+      "log": ".qa/validation/locked-crate-fetch.log"
+    },
+    {
+      "name": "authentic-licenses",
+      "command": [
+        "python3",
+        "v2/scripts/licenses.py"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.073,
+      "log": ".qa/validation/authentic-licenses.log"
+    },
+    {
+      "name": "dev-package",
+      "command": [
+        "python3",
+        "v2/scripts/package.py",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/isolated-runs/393a160c9ca64ea6b3c8de52d2a9fb92/target/aarch64-apple-darwin/release/text-differ"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.095,
+      "log": ".qa/validation/dev-package.log"
+    },
+    {
+      "name": "extracted-production-pipes",
+      "command": [
+        "node",
+        "v2/tests/process.mjs",
+        "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/text-differ/v2/.qa/extracted/30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd/bin/text-differ"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 1.531,
+      "log": ".qa/validation/extracted-production-pipes.log"
+    },
+    {
+      "name": "extracted-native-renderer",
+      "command": [
+        "node",
+        "v2/tests/renderer.mjs"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "seconds": 0.37,
+      "log": ".qa/validation/extracted-native-renderer.log"
+    },
+    {
+      "name": "visible-provenance",
+      "command": [
+        "python3",
+        "v2/scripts/verify_provenance.py"
+      ],
+      "exitCode": 0,
+      "state": "passed",
+      "log": "evidence/logs/provenance-verification.txt"
+    }
+  ],
+  "freshCargoHome": ".qa/isolated-runs/393a160c9ca64ea6b3c8de52d2a9fb92/cargo-home",
+  "package": {
+    "developmentOnly": true,
+    "installableRelease": false,
+    "target": "aarch64-apple-darwin",
+    "archive": "dist/text-differ-dev-aarch64-apple-darwin.zip",
+    "archiveSha256": "30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd",
+    "executableSha256": "c910e8d0a741c96875ab906e483f41ef6be49c97de59be3b6945105bfe609436",
+    "memberCount": 100,
+    "inventoryComplete": true,
+    "files": {
+      "LICENSE": "1d7dbdbcd4fe14dfa08334fab20bffad23c1290f195792a3a4420dadf9912f81",
+      "NOTICE": "37d2f942529b4f73ae7e922023caed63feee650184628a5c8cdd70c36abcad3a",
+      "bin/text-differ": "c910e8d0a741c96875ab906e483f41ef6be49c97de59be3b6945105bfe609436",
+      "extension.json": "734ac84a7224ed4a9fd2b484c99f0656e35bb717c522851392ec30c13c1d32b9",
+      "licenses/SDK-Apache-2.0.txt": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "licenses/SDK-NOTICE.txt": "aa04ab6115cfc2e2172b0613013611a59dc487c70f3e2dfbd2f135326d703c74",
+      "licenses/diff-BSD-3-Clause.txt": "eda81a415869e67809f6a9f3fd6056062cb83a462118e07eec5e92b2e0c40ce9",
+      "licenses/host-Apache-2.0.txt": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "licenses/raycast-MIT.txt": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "licenses/rust-locked.json": "16efad64627770f5411f7de8ded87fab67927fcf21ff774eb6c66ddd08c5ea15",
+      "licenses/rust/bitflags-2.13.2/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/bitflags-2.13.2/LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+      "licenses/rust/bumpalo-3.20.3/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/bumpalo-3.20.3/LICENSE-MIT": "65f94e99ddaf4f5d1782a6dae23f35d4293a9a01444a13135a6887017d353cee",
+      "licenses/rust/bytes-1.12.1/LICENSE": "45f522cacecb1023856e46df79ca625dfc550c94910078bd8aec6e02880b3d42",
+      "licenses/rust/cfg-if-1.0.5/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/cfg-if-1.0.5/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/errno-0.3.14/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/errno-0.3.14/LICENSE-MIT": "8764a597675778ddfd4e25f81b08a05dbcf089ac05662df7613fe67f150e3aa2",
+      "licenses/rust/fastrand-2.5.0/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/fastrand-2.5.0/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/futures-core-0.3.34/LICENSE-APACHE": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
+      "licenses/rust/futures-core-0.3.34/LICENSE-MIT": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
+      "licenses/rust/futures-task-0.3.34/LICENSE-APACHE": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
+      "licenses/rust/futures-task-0.3.34/LICENSE-MIT": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
+      "licenses/rust/futures-util-0.3.34/LICENSE-APACHE": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
+      "licenses/rust/futures-util-0.3.34/LICENSE-MIT": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
+      "licenses/rust/getrandom-0.4.3/LICENSE-APACHE": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
+      "licenses/rust/getrandom-0.4.3/LICENSE-MIT": "523a42c25d245dde9c015f882cec7f4555aad883382a6cf19b4b7d9b2cd5419b",
+      "licenses/rust/itoa-1.0.18/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/itoa-1.0.18/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/js-sys-0.3.106/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/js-sys-0.3.106/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/libc-0.2.191/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/libc-0.2.191/LICENSE-MIT": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+      "licenses/rust/linux-raw-sys-0.12.1/COPYRIGHT": "3290ae0fbc9ddb77d2239121d710f0bb9d31b3b4744e6d97fe01e652b4c1870b",
+      "licenses/rust/linux-raw-sys-0.12.1/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/linux-raw-sys-0.12.1/LICENSE-Apache-2.0_WITH_LLVM-exception": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "licenses/rust/linux-raw-sys-0.12.1/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/memchr-2.8.3/COPYING": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+      "licenses/rust/memchr-2.8.3/LICENSE-MIT": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+      "licenses/rust/memchr-2.8.3/UNLICENSE": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
+      "licenses/rust/mio-1.2.4/LICENSE": "07919255c7e04793d8ea760d6c2ce32d19f9ff02bdbdde3ce90b1e1880929a9b",
+      "licenses/rust/once_cell-1.21.4/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/once_cell-1.21.4/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/pin-project-lite-0.2.17/LICENSE-APACHE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "licenses/rust/pin-project-lite-0.2.17/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/proc-macro2-1.0.107/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/proc-macro2-1.0.107/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/quote-1.0.47/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/quote-1.0.47/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/r-efi-6.0.0/AUTHORS": "d027e91dbc9cdbb2f1190068e498bd6b61cff022b6a032b191021ba658d96111",
+      "licenses/rust/r-efi-6.0.0/README.md": "420f65fec3ba2e89d49da51b222d2881d26959037a7b7d3794143db4bd4627b1",
+      "licenses/rust/rustix-1.1.5/COPYRIGHT": "377c2e7c53250cc5905c0b0532d35973392af16ffb9596a41d99d202cf3617c9",
+      "licenses/rust/rustix-1.1.5/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/rustix-1.1.5/LICENSE-Apache-2.0_WITH_LLVM-exception": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "licenses/rust/rustix-1.1.5/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/rustversion-1.0.23/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/rustversion-1.0.23/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/serde-1.0.229/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/serde-1.0.229/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/serde_core-1.0.229/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/serde_core-1.0.229/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/serde_derive-1.0.229/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/serde_derive-1.0.229/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/serde_json-1.0.154/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/serde_json-1.0.154/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/signal-hook-registry-1.4.8/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/signal-hook-registry-1.4.8/LICENSE-MIT": "503558bfefe66ca15e4e3f7955b3cb0ec87fd52f29bf24b336af7bd00e946d5c",
+      "licenses/rust/slab-0.4.12/LICENSE": "8ce0830173fdac609dfb4ea603fdc002c2f4af0dc9b1a005653f5da9cf534b18",
+      "licenses/rust/syn-3.0.9/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/syn-3.0.9/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/tempfile-3.27.0/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/tempfile-3.27.0/LICENSE-MIT": "8b427f5bc501764575e52ba4f9d95673cf8f6d80a86d0d06599852e1a9a20a36",
+      "licenses/rust/tezbar-extension-sdk-0.1.1/LICENSE": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "licenses/rust/tezbar-extension-sdk-0.1.1/NOTICE": "aa04ab6115cfc2e2172b0613013611a59dc487c70f3e2dfbd2f135326d703c74",
+      "licenses/rust/tokio-1.54.1/LICENSE": "253cd04c6714889df2d32f3f64d669179a1c95c76ac43c40882c52eb06bc3552",
+      "licenses/rust/tokio-macros-2.7.2/LICENSE": "0b83dc40cba89b9922bb84b0a9c7d2768ce37c1d7e138b7424fd4549915778c9",
+      "licenses/rust/unicode-ident-1.0.27/LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "licenses/rust/unicode-ident-1.0.27/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/unicode-ident-1.0.27/LICENSE-UNICODE": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+      "licenses/rust/uuid-1.23.3/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/uuid-1.23.3/LICENSE-MIT": "436bc5a105d8e57dcd8778730f3754f7bf39c14d2f530e4cde4bd2d17a83ec3d",
+      "licenses/rust/wasi-0.11.1+wasi-snapshot-preview1/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/wasi-0.11.1+wasi-snapshot-preview1/LICENSE-Apache-2.0_WITH_LLVM-exception": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "licenses/rust/wasi-0.11.1+wasi-snapshot-preview1/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "licenses/rust/wasm-bindgen-0.2.129/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/wasm-bindgen-0.2.129/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/wasm-bindgen-macro-0.2.129/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/wasm-bindgen-macro-0.2.129/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/wasm-bindgen-macro-support-0.2.129/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/wasm-bindgen-macro-support-0.2.129/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/wasm-bindgen-shared-0.2.129/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "licenses/rust/wasm-bindgen-shared-0.2.129/LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "licenses/rust/windows-link-0.2.1/license-apache-2.0": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
+      "licenses/rust/windows-link-0.2.1/license-mit": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "licenses/rust/windows-sys-0.61.2/license-apache-2.0": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
+      "licenses/rust/windows-sys-0.61.2/license-mit": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "licenses/rust/zmij-1.0.23/LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "resources/command-icon.png": "539f182de0e5c528161361fb6f949fda52800f025a947cd3421512064aafddd5"
+    },
+    "extractedExecutable": ".qa/extracted/30436bd11f23c389dcefe902805b02196546fcb84a6653bc948020b6ffa38ffd/bin/text-differ"
+  },
+  "notRun": [
+    "full host/Tauri build",
+    "live GUI/Finder/Explorer/clipboard",
+    "Windows linked executable / OS execution",
+    "installation/release/push/PR/deletion"
+  ],
+  "validatedInputs": {
+    "v2/src/core.rs": "709bfe358823ea8fa71c9b115a8dc824f61577d0ce1b4fb92309d52158a2bdfe",
+    "v2/src/lib.rs": "c333e62c1e67b1542d6fbcf56adcafc69ce80f94fbab3b766524c2a0e439797f",
+    "v2/src/main.rs": "ce24d30259cd0a7a4b082ccb1dbacfe847605df3a3ae95b4e5ebdff72e3b3dda",
+    "v2/tests/core.rs": "eb180860c8414b112d1485a540a249bf0f96c5c064751a1627f6800eaf8e7722",
+    "v2/Cargo.toml": "c2f2e0f99d0dd85d9900798789446a37a67b9c23d7443988318fd77533b0ece1",
+    "v2/Cargo.lock": "bb7a2f191b0aeb000a572314855276f60193f174037bd39df93f31ab1b88236f",
+    "v2/extension.json": "a0d4a4cc0c7e459520a0cf43786a11196178068a344a7da0d5f1d12758c1b67c",
+    "v2/resources/command-icon.png": "539f182de0e5c528161361fb6f949fda52800f025a947cd3421512064aafddd5"
+  },
+  "xerj": {
+    "prefix": "ax-eca10337d9d5",
+    "completeCoverage": false,
+    "finalExitCode": 1,
+    "reason": "Frozen dataset rejects new Cargo.toml fields; no namespace/schema workaround. Exact source/rg/Git checks used."
+  }
+}

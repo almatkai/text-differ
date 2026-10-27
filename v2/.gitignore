@@ -1,0 +1,8 @@
+/.qa/
+/target/
+/dist/
+
+/target-*/
+__pycache__/
+*.pyc
+/tests/tools/node_modules/
